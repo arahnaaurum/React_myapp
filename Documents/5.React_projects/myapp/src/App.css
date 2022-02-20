@@ -1,12 +1,12 @@
 .App {
   text-align: center;
-  background-color: #3f4e6d;
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #53668b;
 }
 
 .App-header {
-  background-color: #53668b;
+  background-color: #3f4e6d;
   padding: 20px;
   font-size: 64px;
   color: white;
@@ -17,8 +17,12 @@
   color: rgb(34, 24, 56);
 }
 
+.message_input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .message_list {
-  margin: auto;
   padding: 10px;
   width: 500px;
   height: 400px;
@@ -33,7 +37,6 @@
 }
 
 .message_box {
-  background-color: #53668b;
   display: flex;
   align-items: baseline;
   padding: 15px;
@@ -42,6 +45,8 @@
 }
 .message_author {
   font-size: 18px;
+  padding: 5px;
+  border-radius: 3px;
   background-color: rgb(34, 24, 56);
   position: absolute;
   right: 0;
@@ -49,8 +54,6 @@
 }
 
 .message_field {
-  margin-top: 30px;
-  margin-bottom: 50px;
   border: none;
   border-radius: 10px;
   font-size: 24px;
@@ -64,4 +67,9 @@
   padding: 10px;
   color:white;
   background-color: rgb(34, 24, 56);
+}
+
+.chat_container {
+  display: flex;
+  justify-content: center;
 }
