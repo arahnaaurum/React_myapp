@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { grey, blue } from '@mui/material/colors';
 
 const myName = 'User';
+const theme = createTheme({
+  palette: {
+    primary: blue,
+    secondary: grey,
+   },
+});
 
 ReactDOM.render(
  <React.StrictMode>
-   <App name={myName} />
+    <ThemeProvider theme = {theme}>
+      <App name={myName} />
+    </ThemeProvider>
  </React.StrictMode>,
  document.getElementById("root")
 );
