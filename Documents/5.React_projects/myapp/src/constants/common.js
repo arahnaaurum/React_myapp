@@ -39,3 +39,18 @@ export const CHATLIST = [
       id: 'two',
       },
   ]
+
+  export const INITIALCHATS = {
+    id1: {
+      name: "Chat1",
+      messages: [{ text: "Hi, human!", author: AUTHORS.bot }, { text: "Hello, bot!", author: AUTHORS.me }],
+    },
+    id2: {
+      name: "Chat2",
+      messages: [{ text: "How do you do?", author: AUTHORS.me }, { text: "Fine, thank you", author: AUTHORS.bot }],
+    },
+    id3: {
+      name: "Chat3",
+      messages: [{ text: "What is the capital of Great Britain?", author: AUTHORS.me }, { text: "London is the capital of Great Britain", author: AUTHORS.bot }],
+    },
+   };
