@@ -5,6 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { grey, blue } from '@mui/material/colors';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Home } from './pages/Home';
+import { Profile } from './pages/Profile';
+import { Chats } from './pages/Chats';
+import { Nopage } from './pages/Nopage';
 
 const myName = 'User';
 const theme = createTheme({
@@ -17,7 +22,9 @@ const theme = createTheme({
 ReactDOM.render(
  <React.StrictMode>
     <ThemeProvider theme = {theme}>
-      <App name={myName} />
+      <BrowserRouter>
+        <App name={myName} />
+      </BrowserRouter>
     </ThemeProvider>
  </React.StrictMode>,
  document.getElementById("root")
