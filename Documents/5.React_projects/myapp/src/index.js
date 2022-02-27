@@ -10,6 +10,8 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Chats } from './pages/Chats';
 import { Nopage } from './pages/Nopage';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const myName = 'User';
 const theme = createTheme({
@@ -21,11 +23,13 @@ const theme = createTheme({
 
 ReactDOM.render(
  <React.StrictMode>
+   <Provider store={store}>
     <ThemeProvider theme = {theme}>
       <BrowserRouter>
         <App name={myName} />
       </BrowserRouter>
     </ThemeProvider>
+    </Provider>
  </React.StrictMode>,
  document.getElementById("root")
 );

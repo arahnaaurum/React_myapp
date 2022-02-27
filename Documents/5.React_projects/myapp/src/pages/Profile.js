@@ -1,3 +1,5 @@
+import { ProfileComp } from '../components/ProfileComp'
+
 export function Profile() {
-    return <div> PROFILE </div>
+    return <ProfileComp />
 }
