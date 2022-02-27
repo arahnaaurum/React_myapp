@@ -23,7 +23,7 @@ function App(props) {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/chats/:id" element={<Chats />} />
+            <Route path="/chats/:chatid" element={<Chats />} />
             <Route path="*" element={<Nopage />} />
           </Routes>
 

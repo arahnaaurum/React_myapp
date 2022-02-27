@@ -10,9 +10,9 @@ import { ControlPanel } from '../components/ControlPanel';
 
 export function Chats() {
     const [chats, setChats] = useState(INITIALCHATS)
-    const { id } = useParams()
+    const { chatid } = useParams()
 
-    if (!chats[id]) {
+    if (!chats[chatid]) {
       return <Nopage/>
     }
     
@@ -21,7 +21,7 @@ export function Chats() {
         <ChatList chats={chats} />
 
         <ul className='message_list'>
-          {chats[id].messages?.map((item, index) => (
+          {chats[chatid].messages?.map((item, index) => (
             <li className='message_box' key={index}>
               <div className='message_text'>{item.text}</div>
               <div className='message_author'>
