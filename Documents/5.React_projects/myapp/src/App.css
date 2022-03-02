@@ -108,3 +108,18 @@ body {
   justify-content: center;
   background-color: white;
 }
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileGreeting {
+  color: white;
+}
+.chat_sidelist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
