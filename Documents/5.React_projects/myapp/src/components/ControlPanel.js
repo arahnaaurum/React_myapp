@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addMessage } from '../store/messages/actions';
+import { addMessageWithThunk } from '../store/messages/actions';
 import { TextField, Fab } from "@mui/material";
 import { Send } from "@mui/icons-material";
 
@@ -21,7 +21,7 @@ export function ControlPanel() {
         text: value,
         author: name
       }
-      dispatch(addMessage(chatId, message))
+      dispatch(addMessageWithThunk(chatId, message))
       setValue ('');
     }
   }
