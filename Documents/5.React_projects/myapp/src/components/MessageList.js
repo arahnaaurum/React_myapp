@@ -16,7 +16,7 @@ export const MessageList = () => {
           </div>
         <ul className='message_list'>
           {messages?.map((item, index) => (
-            <li className='message_box' key={item.id}>
+            <li className='message_box' key={index}>
               <div className='message_text'>{item.text}</div>
               <div className='message_author'>
                 {item.author !== "bot"? <FaceIcon color = "secondary" /> : <AdbIcon color = "secondary" />}

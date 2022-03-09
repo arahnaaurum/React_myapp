@@ -3,15 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { CircularProgress } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { grey, blue } from '@mui/material/colors';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Home } from './pages/Home';
-import { Profile } from './pages/Profile';
-import { Chats } from './pages/Chats';
-import { Nopage } from './pages/Nopage';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import store, { persistor } from './store';
+import { PersistGate } from 'redux-persist/integration/react';
 
 const myName = 'User';
 const theme = createTheme({
@@ -24,11 +22,13 @@ const theme = createTheme({
 ReactDOM.render(
  <React.StrictMode>
    <Provider store={store}>
-    <ThemeProvider theme = {theme}>
-      <BrowserRouter>
-        <App name={myName} />
-      </BrowserRouter>
-    </ThemeProvider>
+      <PersistGate persistor={persistor} loading={<CircularProgress />}>
+        <ThemeProvider theme = {theme}>
+          <BrowserRouter>
+            <App name={myName} />
+          </BrowserRouter>
+        </ThemeProvider>
+      </PersistGate>
     </Provider>
  </React.StrictMode>,
  document.getElementById("root")
