@@ -28,29 +28,5 @@ export const BOTANSWERS = ["Уютненько",
 "In Soviet Russia bots code you!"
 ]
 
-  
-export const CHATLIST = [
-    {
-      name: 'Chat 1',
-      id: 'one',
-    },
-    {
-      name: 'Chat 2',
-      id: 'two',
-      },
-  ]
-
-  export const INITIALCHATS = {
-    id1: {
-      name: "Chat1",
-      messages: [{ text: "Hi, human!", author: AUTHORS.bot }, { text: "Hello, bot!", author: AUTHORS.me }],
-    },
-    id2: {
-      name: "Chat2",
-      messages: [{ text: "How do you do?", author: AUTHORS.me }, { text: "Fine, thank you", author: AUTHORS.bot }],
-    },
-    id3: {
-      name: "Chat3",
-      messages: [{ text: "What is the capital of Great Britain?", author: AUTHORS.me }, { text: "London is the capital of Great Britain", author: AUTHORS.bot }],
-    },
-   };
+export const API_URL_PUBLIC = "https://api.github.com/gists/public";
+export const API_URL_GIST = "https://api.github.com/gists/";
