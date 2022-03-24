@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
 import { List, ListItem, Dialog, TextField, Button } from '@mui/material';
 import { addChat, deleteChat } from '../store/chats/actions'
 import { Delete } from "@mui/icons-material";
+import { addChatWithFB, deleteChatwithFB, initTrackerWithFB } from "../store/middleware";
 
 export function ChatList(props) {
   const [visible, setVisible] = useState(false)
@@ -18,17 +19,22 @@ export function ChatList(props) {
   const handleChange = (event) => setChatName(event.target.value)
   
   const onAddChat = () => {
-    dispatch(addChat(chatName));
+    // dispatch(addChat(chatName));
+    dispatch(addChatWithFB(chatName));
     setChatName('');
     setVisible(false)
   }
 
-  const onDeleteChat = (index) => {
-    dispatch(deleteChat(index));
+  const onDeleteChat = (id) => {
+    dispatch(deleteChatwithFB(id));
   }
 
-    return (
-      <>
+  useEffect(() => {
+    dispatch(initTrackerWithFB());
+  }, []);
+
+  return (
+    <>
 
       <List>
             {chats?.map((chat, index) => (
@@ -37,7 +43,7 @@ export function ChatList(props) {
                   <b style = {{ color: chat.id === chatId ? "white":"grey" }}>
                   {chat.name}
                   </b>
-                  <Button onClick = {()=> onDeleteChat(index)}><Delete /></Button>
+                  <Button onClick = {()=> onDeleteChat(chat.id)}><Delete /></Button>
                  </Link>
               </ListItem>
             ))}
@@ -47,6 +53,6 @@ export function ChatList(props) {
         <TextField value={chatName} onChange={handleChange} />
         <Button onClick = {onAddChat}>ADD</Button>
       </Dialog>
-      </>
+    </>
     );
 }
