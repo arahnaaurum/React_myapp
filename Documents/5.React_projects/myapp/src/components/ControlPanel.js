@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addMessageWithThunk } from '../store/messages/actions';
 import { TextField, Fab } from "@mui/material";
 import { Send } from "@mui/icons-material";
+import { addMessageWithFB } from '../store/middleware';
 
 export function ControlPanel() {
   const [value, setValue] = useState('');
@@ -21,7 +22,8 @@ export function ControlPanel() {
         text: value,
         author: name
       }
-      dispatch(addMessageWithThunk(chatId, message))
+      /* dispatch(addMessageWithThunk(chatId, message)) */
+      dispatch(addMessageWithFB(chatId, message))
       setValue ('');
     }
   }
