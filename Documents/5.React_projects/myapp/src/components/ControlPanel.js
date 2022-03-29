@@ -57,6 +57,7 @@ export function ControlPanel() {
       variant = "outlined"
       className='message_field' type="text" name="author" value={value} onChange={handleValue} onKeyDown={handleKeyDown}/>
     <Fab
+      id = "sendBTN"
       style={{  margin: "20px" }}
       color = "primary" className='message_button' onClick={updateList}> 
     <Send/>
