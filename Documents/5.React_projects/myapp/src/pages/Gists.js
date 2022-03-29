@@ -30,6 +30,6 @@ export const Gists = () => {
                 <button onClick={requestGists}>Retry</button>
             </>
         )}
-        <ul>{gists.map(renderGist)}</ul>
+        <ul data-testid="gistlist">{gists.map(renderGist)}</ul>
     </div>
 };

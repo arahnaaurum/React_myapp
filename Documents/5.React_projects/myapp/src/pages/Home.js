@@ -1,3 +1,5 @@
+import { HomeComp } from "../components/HomeComp";
+
 export function Home() {
-    return <div> HOME </div>
+    return <div> <HomeComp/> </div>
 }
